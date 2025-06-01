@@ -45,5 +45,7 @@ $(function () {
         }
       }
     });
-    
+    $(window).on("hashchange", function () {
+      window.location.reload();
+    }); 
 });
