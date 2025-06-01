@@ -31,5 +31,13 @@ $(function () {
     // Hide loader after everything finishes loading
     $(window).on("load", function () {
       $(".loading").show().delay(1000).fadeOut(1000);
+      const hash = window.location.hash;
+      if (hash) {
+        const element = document.querySelector(`[data-target="#${hash.substring(1)}"]`);
+        if (element) {
+          element.click();
+        }
+      }
     });
+    
 });
