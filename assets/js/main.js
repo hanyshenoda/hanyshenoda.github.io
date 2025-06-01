@@ -31,11 +31,17 @@ $(function () {
     // Hide loader after everything finishes loading
     $(window).on("load", function () {
       $(".loading").show().delay(1000).fadeOut(1000);
-      const hash = window.location.hash;
-      if (hash) {
-        const element = document.querySelector(`[data-target="#${hash.substring(1)}"]`);
-        if (element) {
-          element.click();
+      const rawHash = window.location.hash.substring(1); // remove the '#'
+      if (!rawHash) return;
+
+      const hashText = decodeURIComponent(rawHash).toLowerCase();
+
+      const modals = document.querySelectorAll('[data-toggle="modal"]');
+      for (const modal of modals) {
+        const h4 = modal.querySelector('h4');
+        if (h4 && h4.textContent.trim().toLowerCase().includes(hashText)) {
+          modal.click();
+          break;
         }
       }
     });
