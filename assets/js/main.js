@@ -39,7 +39,12 @@ $(function () {
       const modals = document.querySelectorAll('[data-toggle="modal"]');
       for (const modal of modals) {
         const h4 = modal.querySelector('h4');
+        const h2 = modal.querySelector('h2');
         if (h4 && h4.textContent.trim().toLowerCase().includes(hashText)) {
+          modal.click();
+          break;
+        }
+        if (h2 && h2.textContent.trim().toLowerCase().includes(hashText)) {
           modal.click();
           break;
         }
