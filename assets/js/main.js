@@ -29,7 +29,7 @@ $(function () {
         // Properly wait for .delay + .fadeOut to finish
         $(".loading")
             .show()
-            .delay(0)
+            .delay(1000)
             .fadeOut(1000);
 
         await $(".loading").promise(); // This waits for the whole animation queue to finish
