@@ -34,12 +34,20 @@ $(function () {
 
         await $(".loading").promise(); // This waits for the whole animation queue to finish
 
+        const modals = document.querySelectorAll('[data-toggle="modal"]');
+        modals.forEach(modal => {
+          modal.addEventListener('click', () => {
+            let element = modal.querySelector('h4')
+            if (!element) element = modal.querySelector('h2')
+            let text = element.textContent.trim().toLowerCase();
+            history.replaceState(null, null, `#${text}`);
+          })
+        });
+
         const rawHash = window.location.hash.substring(1);
         if (!rawHash) return;
 
         const hashText = decodeURIComponent(rawHash).toLowerCase();
-        const modals = document.querySelectorAll('[data-toggle="modal"]');
-
         function scrollToElement(element) {
             return new Promise((resolve) => {
                 $('html, body').animate({
