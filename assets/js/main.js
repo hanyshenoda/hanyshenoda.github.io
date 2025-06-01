@@ -23,10 +23,6 @@ $(function () {
       1000
     );
   });
-   // Show loader as soon as possible (before window loads)
-    $(document).ready(function () {
-      $(".loading").show().delay(500).fadeOut(500);
-    });
 
     // Hide loader after everything finishes loading
     $(window).on("load", async function () {
