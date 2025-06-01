@@ -62,11 +62,13 @@ $(function () {
             if ((h4 && h4.textContent.trim().toLowerCase().includes(hashText))) {
                 await scrollToElement(modal);
                 modal.click();
+                break
             }
             else if ((h2 && h2.textContent.trim().toLowerCase().includes(hashText))) {
               if (idx > 3) showSection('amendments-section')
               await scrollToElement(modal);
               modal.click();
+              break
             }
         }
     });
