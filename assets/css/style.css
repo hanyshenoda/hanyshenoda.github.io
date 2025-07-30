@@ -124,7 +124,11 @@ a:hover {
   padding: 10px 20px 8px;
 }
 /* header */
-header {background-image: url(../images/header/3.svg); background-size: cover; background-position: center; background-repeat: no-repeat; height: 50vh;}
+header {background-image: url(../images/header/header.jpg); background-size: 100% 100%; background-position: center; background-repeat: no-repeat; height: 50vh;}
+.move-this {
+  position: absolute;
+  transform: translate(-125%, 50%);
+}
 
 header .app_img {display: flex;}
 .app_links img {width: auto;max-height: 70px;}
